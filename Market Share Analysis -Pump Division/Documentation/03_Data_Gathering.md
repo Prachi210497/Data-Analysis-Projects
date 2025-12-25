@@ -10,12 +10,16 @@ This document outlines the **data sources, ownership, structure, and granularity
 
 The analysis is built by consolidating data from multiple operational datasets related to sales, installed base, and service ownership.
 
-| Data Source                     | Description                                 | Business Use                          |
-| ------------------------------- | ------------------------------------------- | ------------------------------------- |
-| Order Booking (OB Data)         | Sales and order-related information         | Revenue, customer value, market share |
-| Installed Base (IB Data)        | Installed pump and status details           | Operational, inactive, and lost pumps |
-| Service Person Mapping (Bridge) | Mapping between pumps and service personnel | Service-wise performance & RLS        |
-| Calendar Table                  | Standard date dimension                     | Time-based analysis                   |
+2.1 Internal Data Sources
+| Source System            | Description                                    | Key Usage                                 |
+| ------------------------ | ---------------------------------------------- | ----------------------------------------- |
+| CRM System               | Customer, opportunity, and sales pipeline data | Customer segmentation, deal conversion    |
+| SAP / ERP                | Billing, invoicing, product-level revenue      | Revenue calculation, YoY comparison       |
+| Installed Base (IB) Data | Installed equipment and service contracts      | Market penetration and opportunity sizing |
+| Sales Master Data        | Sales hierarchy, regions, territories          | Regional and salesperson performance      |
+| MALP List                | Product, Model and its price list              | Evaluate potential  
+
+Note: External data was used only for reference and validation, while all KPI calculations were driven by internal systems.
 
 ---
 
@@ -49,7 +53,7 @@ Contains sales and order-related data representing commercial transactions with 
 
 ### Description
 
-Represents pumps installed at customer locations along with their lifecycle and operational status.
+Represents pumps installed at customer locations along with their lifecycle and Pump operational status.
 
 ### Key Attributes (Indicative)
 
@@ -74,7 +78,7 @@ Represents pumps installed at customer locations along with their lifecycle and 
 
 ### Description
 
-A bridge table used to resolve **many-to-many relationships** between pumps and service personnel.
+A bridge table used to resolve **One-to-many relationships** between pumps and service personnel.
 
 ### Key Attributes
 
@@ -83,11 +87,11 @@ A bridge table used to resolve **many-to-many relationships** between pumps and 
 
 ### Granularity
 
-* **Pump-to-service-person mapping**
+* **Pump-to-sales-person mapping**
 
 ### Business Relevance
 
-* Enables service-person-wise analysis
+* Enables sales-person-wise analysis
 * Supports **Row-Level Security (RLS)** implementation
 
 ---
@@ -141,7 +145,24 @@ A standard date dimension table created to support consistent time intelligence.
 
 ---
 
-## 10. Output of Data Gathering Phase
+## 10. Data Confidentiality & Professional Ethics
+
+The documentation and explanations shared in this project are intended to demonstrate my role, approach, and analytical thinking as a Business Analyst.
+
+To maintain the trust of the organization and comply with company policies and confidentiality agreements, the following practices were strictly followed:
+
+No actual company data, reports, or internal files are shared in this repository
+
+All examples, structures, and explanations are generic and anonymized
+
+Sensitive business metrics, customer information, and financial figures are masked or excluded
+
+The Power BI files and datasets used internally are not uploaded or publicly shared
+
+To comply with organizational policies, the data displayed is anonymized and representative, ensuring confidentiality while accurately reflecting the business logic used for analysi
+
+This project reflects how I work, how I think, and how I approach problem-solving, while fully adhering to organizational rules, data privacy, and professional ethics.
+
+## 11. Output of Data Gathering Phase
 
 The outcome of this phase is a **consolidated, well-understood dataset landscape** ready for transformation, modeling, and analytics.
-
