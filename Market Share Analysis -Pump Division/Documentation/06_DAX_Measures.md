@@ -1,3 +1,5 @@
+# 04. DAX Measures
+
 ### Objective
 
 The objective of this section is to document the key **DAX measures** created to support **market share analysis**, **performance tracking, and trend comparison** across **Installed Base (IB)** and **Order Booking (OB)** datasets.
