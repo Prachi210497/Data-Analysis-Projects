@@ -1,4 +1,4 @@
-# 04. DAX Measures
+# 06. DAX Measures
 
 ### Objective
 
