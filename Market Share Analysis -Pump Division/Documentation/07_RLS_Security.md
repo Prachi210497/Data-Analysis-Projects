@@ -1,3 +1,5 @@
+# 07. RLS Security
+
 Implementing Row-Level Security (RLS) was to ensure controlled data access so that users can view only the data relevant to their assigned **service person(Sales), region, or hierarchy**.
 
 This approach supports data confidentiality, compliance, and role-based reporting within the Power BI solution.
